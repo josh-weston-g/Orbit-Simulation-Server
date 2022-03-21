@@ -216,7 +216,7 @@ request.open('GET', 'https://api.le-systeme-solaire.net/rest/bodies/earth');
 request.responseType = "json"
 request.send();
 request.onload = function() {
-    radius.value = (request.response.semimajorAxis)/1000000     // divide by 1000000 to get correct scale
+    radius.value = (request.response.semimajorAxis)/1000000     // divide by 1000000 to get correct scale     ////////////////// When using new db, no need for scaling numbers
     diameter.value = ((request.response.meanRadius) * 2)/1000   // multiply by 2 to get diameter and divide by 1000 to get correct scale
     bodyType.innerHTML = "Body Type: " + request.response.bodyType
 };
